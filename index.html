@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071522">
+  <title>منصة الامتحانات التعليمية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#" onclick="goHome(); return false;">
+        <img src="assets/logo.png" alt="شعار المنصة">
+        <div>
+          <strong>منصة الامتحانات</strong>
+          <span>بالعلم نصنع الأجيال</span>
+        </div>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeBtn" title="تبديل الوضع">☾</button>
+        <button class="student-chip" onclick="showStudentPanel()">
+          <span class="avatar">ط</span>
+          <span id="studentNameLabel">الطالب</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="container">
+    <section id="homeView">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">منصة تعليمية متكاملة</span>
+          <h1>اختبر مستواك،<br><span>وطوّر مستواك.</span></h1>
+          <p>امتحانات تفاعلية منظمة حسب الصف والمادة، مع مؤقت وتصحيح فوري ونتائج محفوظة على جهازك.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToGrades()">ابدأ الامتحان <span>←</span></button>
+            <button class="btn btn-ghost" onclick="showHowItWorks()">كيف تعمل المنصة؟</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="orb orb-1"></div><div class="orb orb-2"></div>
+          <div class="hero-logo"><img src="assets/logo.png" alt=""></div>
+          <div class="floating-card fc-1">✓ تصحيح فوري</div>
+          <div class="floating-card fc-2">⏱ مؤقت ذكي</div>
+          <div class="floating-card fc-3">★ تحليل النتيجة</div>
+        </div>
+      </div>
+
+      <section class="section" id="gradesSection">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">اختر مرحلتك</span>
+            <h2>الصفوف الدراسية</h2>
+          </div>
+          <span class="section-note">يمكن تعديل الصفوف من ملف <b>app.js</b></span>
+        </div>
+        <div id="gradesGrid" class="grades-grid"></div>
+      </section>
+
+      <section class="stats-strip">
+        <div><b>03</b><span>مواد أساسية</span></div>
+        <div><b>∞</b><span>اختبارات قابلة للإضافة</span></div>
+        <div><b>100%</b><span>تصميم متجاوب</span></div>
+        <div><b>24/7</b><span>متاح على جهازك</span></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div><span class="section-kicker">المواد</span><h2>اختر المادة</h2></div>
+        </div>
+        <div id="subjectsPreview" class="subjects-grid"></div>
+      </section>
+    </section>
+
+    <section id="gradeView" class="hidden">
+      <button class="back-btn" onclick="goHome()">→ العودة للرئيسية</button>
+      <div class="page-title">
+        <span class="section-kicker">الصف المختار</span>
+        <h1 id="gradeTitle"></h1>
+        <p>اختر المادة ثم الامتحان الذي تريد البدء به.</p>
+      </div>
+      <div id="subjectTabs" class="subject-tabs"></div>
+      <div id="examsGrid" class="exams-grid"></div>
+    </section>
+
+    <section id="examIntroView" class="hidden"></section>
+    <section id="examView" class="hidden"></section>
+    <section id="resultView" class="hidden"></section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <img src="assets/logo.png" alt="">
+      <div><b>منصة الامتحانات</b><span>بالعلم نصنع الأجيال</span></div>
+      <small>© <span id="year"></span> جميع الحقوق محفوظة</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
